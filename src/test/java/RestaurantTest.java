@@ -6,6 +6,8 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -104,4 +106,22 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void selected_item_from_menu_passing_list_of_OrderItems()  {
+
+        List<String> orderItems=new ArrayList<>();
+        orderItems.add("Sweet corn soup");
+        orderItems.add("Vegetable lasagne");
+        assertEquals(null,restaurant.findCostSelectedItem(orderItems));
+    }
+
+
+    @Test
+    public void selected_item_from_menu_returning_cost_in_positive()  {
+
+        List<String> orderItems=new ArrayList<>();
+        orderItems.add("Sweet corn soup");
+        orderItems.add("Vegetable lasagne");
+        assertEquals(388.0,restaurant.findCostSelectedItem(orderItems));
+    }
 }

@@ -67,4 +67,9 @@ public class Restaurant {
         return name;
     }
 
+    public Double findCostSelectedItem(List<String> selectedMenuItems){
+      return null;
+    }
+
+
 }
