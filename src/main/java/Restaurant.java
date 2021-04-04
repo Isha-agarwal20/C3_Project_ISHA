@@ -68,8 +68,28 @@ public class Restaurant {
     }
 
     public Double findCostSelectedItem(List<String> selectedMenuItems){
-      return null;
+        int length=selectedMenuItems.size();
+        Double cost=0.0;
+
+
+        for(int i=0;i<length;i++)
+        {
+            String itemName=selectedMenuItems.get(i);
+
+            for(Item item: menu)
+            {
+                if(item.getName().equals(itemName))
+                    cost=cost+item.getPrice();
+            }
+        }
+
+
+
+
+
+        return cost;
     }
+
 
 
 }
